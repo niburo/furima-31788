@@ -20,7 +20,7 @@
  has_one    :  purchase
 
 
-## address テーブル
+### address テーブル
 
 | Column        | Type          | Options           |
 | ------------- | ------------- | ----------------- |
@@ -38,7 +38,7 @@
 
 
 
-## items テーブル
+### items テーブル
 
 | Column                   | Type          | Options         |
 | ------------------------ | ------------- | --------------  |
@@ -59,7 +59,7 @@
 
 
 
- ## purchases テーブル
+### purchases テーブル
 
 | Column    | Type       | Options           |
 | --------- | ---------- | ----------------- |
