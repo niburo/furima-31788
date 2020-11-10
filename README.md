@@ -23,14 +23,13 @@
 
 | Column         | Type          | Options           |
 | -------------- | ------------- | ----------------- |
-| user           | string        | null: false       |
 | postal_code    | string        | null: false       |
 | prefectures_id | integer       | null: false       |
 | municipality   | string        | null: false       |
 | house_number   | string        | null: false       |
-| building_name  | string        | foreign_key: true |
+| building_name  | string        |                   |
 | phone_number   | string        | null: false       |
-| purchases      | references    | foreign_key: true |
+| purchase      | references    | foreign_key: true |
 
 ### Association
  belongs_to : purchase
