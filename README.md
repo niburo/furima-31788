@@ -1,6 +1,6 @@
 # テーブル設計
 
-## users テーブル
+### users テーブル
 
 |      Column        |  Type  |   Options   |
 | ------------------ | ------ | ----------- |
@@ -16,42 +16,39 @@
 
 ### Association
  has_many   :  items
- has_many   :  addresses
- has_one    :  purchase
+ has_many   :  purchase
 
 
-## address テーブル
+### addresses テーブル
 
-| Column        | Type          | Options           |
-| ------------- | ------------- | ----------------- |
-| user          | string        | null: false       |
-| postal_code   | string        | null: false       |
-| prefectures   | integer       | null: false       |
-| municipality  | string        | null: false       |
-| house_number  | string        | null: false       |
-| building_name | string        | foreign_key: true |
-| phone_number  | string        | null: false       |
-| purchases     | references    | foreign_key: true |
+| Column         | Type          | Options           |
+| -------------- | ------------- | ----------------- |
+| postal_code    | string        | null: false       |
+| prefecture_id  | integer       | null: false       |
+| municipality   | string        | null: false       |
+| house_number   | string        | null: false       |
+| building_name  | string        |                   |
+| phone_number   | string        | null: false       |
+| purchase       | references    | foreign_key: true |
 
 ### Association
  belongs_to : purchase
 
 
 
-## items テーブル
+### items テーブル
 
 | Column                   | Type          | Options         |
 | ------------------------ | ------------- | --------------  |
-| image                    | ActiveStorage | null: false     |
 | user                     | references    | foreign_key:true|
 | name                     | string        | null: false     |
-| info                     | integer       | null: false     |
-| category                 | integer       | null: false     |
-| sales_status             | integer       | null: false     |
-| shipping_fee_status      | integer       | null: false     |
-| prefecture               | integer       | null: false     |
+| info                     | text          | null: false     |
+| category_id              | integer       | null: false     |
+| sales_status_id          | integer       | null: false     |
+| shipping_fee_status_id   | integer       | null: false     |
+| prefecture_id            | integer       | null: false     |
 | price                    | integer       | null: false     |
-| scheduled_delivery       | integer       | null: false     |
+| scheduled_delivery_id    | integer       | null: false     |
 
 ### Association
  belongs_to :  user
@@ -59,7 +56,7 @@
 
 
 
- ## purchases テーブル
+### purchases テーブル
 
 | Column    | Type       | Options           |
 | --------- | ---------- | ----------------- |
