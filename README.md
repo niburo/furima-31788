@@ -1,6 +1,6 @@
 # テーブル設計
 
-## users テーブル
+### users テーブル
 
 |      Column        |  Type  |   Options   |
 | ------------------ | ------ | ----------- |
@@ -16,10 +16,10 @@
 
 ### Association
  has_many   :  items
- has_one    :  purchase
+ has_many   :  purchase
 
 
-### address テーブル
+### addresses テーブル
 
 | Column         | Type          | Options           |
 | -------------- | ------------- | ----------------- |
