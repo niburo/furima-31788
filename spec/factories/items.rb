@@ -11,7 +11,7 @@ FactoryBot.define do
     scheduled_delivery_id {"3"}
 
     after(:build) do |item|
-      item.image.attach(io: File.open(‘spec/fixtures/test_image.jpg’), filename: ‘test_image.jpg’, content_type: ‘image/jpg’)
+      item.image.attach(io: File.open('spec/fixtures/test_image.jpg'), filename: 'test_image.jpg', content_type: 'image/jpg')
     end
   end
 end

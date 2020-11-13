@@ -8,15 +8,7 @@ class Item < ApplicationRecord
     belongs_to :prefecture
     belongs_to :scheduled_delivery
 
-    with_options numericality: { other_than: 0 } do
-     validates :category_id
-     validates :sales_status_id
-     validates :shipping_fee_status_id
-     validates :prefecture_id
-     validates :scheduled_delivery_id
-    end
-     validates :price,  numericality: { only_integer: true,greater_than: 300, less_than: 9999999}
-     validates :price,  format: { with: /\A[0-9]\w*\z/, message: "販売価格は半角数字を使用してください" }
+
 
     with_options presence: true do
      validates :name
@@ -29,4 +21,15 @@ class Item < ApplicationRecord
      validates :price
      validates :image
     end
+
+    with_options numericality: { other_than: 0 } do
+     validates :category_id
+     validates :sales_status_id
+     validates :shipping_fee_status_id
+     validates :prefecture_id
+     validates :scheduled_delivery_id
+    end
+     validates :price,  numericality: { only_integer: true,greater_than: 300, less_than: 9999999}
+     validates :price,  format: { with: /\A[0-9]\w*\z/, message: "販売価格は半角数字を使用してください" }
+
 end
