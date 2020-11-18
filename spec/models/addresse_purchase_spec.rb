@@ -64,12 +64,12 @@ RSpec.describe AddressePurchase, type: :model do
           @purchase.valid?
           expect(@purchase.errors.full_messages).to include("Phone number is invalid. Input half-width characters.")
         end
-        it "電話番号にはハイフンは不要で、11桁以内でないと登録できないこと（09012345678となる）" do
+        it "電話番号にはハイフンは不要で、11桁以内でないと登録できないこと" do
           @purchase.phone_number = "090-12345-6789"
           @purchase.valid?
           expect(@purchase.errors.full_messages).to include("Phone number is invalid. Input half-width characters.")
         end
-        it "電話番号にはハイフンは不要で、数字のみでないと登録できないこと（09012345678となる）" do
+        it "電話番号にはハイフンは不要で、数字のみでないと登録できないこと（ハイフンを含む場合は購入できない）" do
           @purchase.phone_number = "090-12345-6789"
           @purchase.valid?
           expect(@purchase.errors.full_messages).to include("Phone number is invalid. Input half-width characters.")
