@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 2020_11_15_101104) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "postal_code", null: false
     t.integer "prefecture_id", null: false
-    t.string "unicipality", null: false
+    t.string "municipality", null: false
     t.string "house_number", null: false
     t.string "building_name"
     t.string "phone_number", null: false
