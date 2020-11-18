@@ -1,14 +1,14 @@
 class AddressePurchase < ApplicationRecord
-    attr_accessor :token
-    validates :token, presence: true
 
     include ActiveModel::Model
     attr_accessor :postal_code, :prefecture_id, :municipality, :house_number, :building_name, :phone_number, :order_id, :user_id, :item_id
+    attr_accessor :token
     with_options presence: true do
       validates :postal_code,  format: { with: /\A[0-9]{3}-[0-9]{4}\z/, message: "is invalid. Include hyphen(-)"}
       validates :municipality
       validates :house_number
       validates :phone_number, format: { with: /\A[0-9]{11}+\z/i, message: "is invalid. Input half-width characters."}
+      validates :token, presence: true
     end
     validates :prefecture_id, numericality: { other_than: 0, message: "can't be blank" }
     def save
